@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Baie des Orchidées — Hôtel de charme en bordure de lagune, Abidjan</title>
+<meta name="description" content="La Baie des Orchidées, résidence hôtelière 3 étoiles à Biétry, Abidjan. Chambres élégantes, piscine, restaurant, jardin et espaces événementiels jusqu'à 1 000 personnes, en bordure de la lagune Ébrié.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   La Baie des Orchidées — Feuille de style
+   Direction : élégance tropicale, ivoire + orchidée + lagune
+   ========================================================= */
+
+:root{
+  --ivory:#F5F1E8;
+  --cream:#EBE3D4;
+  --sand:#E0D3BE;
+  --ink:#1C1A18;
+  --ink-soft:#38322A;
+  --muted:#8A7E6E;
+  --line:#D8CEBC;
+  --orchid:#7A4F6D;
+  --orchid-dark:#5D3A52;
+  --lagune:#3A6B65;
+  --lagune-soft:#4D8079;
+  --gold:#B08D57;
+  --white:#FFFDF8;
+
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --maxw:1280px;
+  --gut:clamp(20px,5vw,80px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--ivory);
+  color:var(--ink);
+  font-weight:300;
+  line-height:1.7;
+  font-size:16px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* ---------- Typographie ---------- */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:.01em}
+.eyebrow{
+  font-family:var(--sans);font-weight:400;
+  text-transform:uppercase;letter-spacing:.32em;
+  font-size:11px;color:var(--orchid);
+}
+.display{font-size:clamp(3rem,9vw,7.5rem);font-weight:300}
+.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-soft);font-weight:300}
+.section-title{font-size:clamp(2.2rem,5vw,4rem);font-weight:300}
+
+/* ---------- Boutons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--sans);font-size:12px;font-weight:400;
+  text-transform:uppercase;letter-spacing:.22em;
+  padding:16px 34px;border:1px solid var(--ink);
+  background:transparent;color:var(--ink);cursor:pointer;
+  transition:.45s var(--ease);border-radius:0;
+}
+.btn:hover{background:var(--ink);color:var(--ivory)}
+.btn--solid{background:var(--orchid);border-color:var(--orchid);color:var(--white)}
+.btn--solid:hover{background:var(--orchid-dark);border-color:var(--orchid-dark);color:var(--white)}
+.btn--light{border-color:var(--ivory);color:var(--ivory)}
+.btn--light:hover{background:var(--ivory);color:var(--ink)}
+
+/* ---------- Bandeau défilant ---------- */
+.marquee{
+  background:var(--ink);color:var(--ivory);
+  overflow:hidden;white-space:nowrap;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  padding:9px 0;position:relative;z-index:60;
+}
+.marquee__track{display:inline-block;animation:scroll 38s linear infinite}
+.marquee span{padding:0 8px}
+.marquee .dot{color:var(--gold)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- Header ---------- */
+.header{
+  position:sticky;top:0;z-index:55;
+  background:var(--ivory);border-bottom:1px solid var(--line);
+  transition:.4s var(--ease);
+}
+.header__inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  height:84px;
+}
+.header__left,.header__right{display:flex;align-items:center;gap:26px}
+.header__right{justify-content:flex-end}
+.logo{font-family:var(--serif);font-size:22px;letter-spacing:.04em;text-align:center;line-height:1.1}
+.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:.38em;
+  text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:400}
+.navlink{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--ink-soft);transition:.3s}
+.navlink:hover{color:var(--orchid)}
+.lang{font-size:11px;letter-spacing:.2em;border:1px solid var(--line);padding:6px 11px;transition:.3s}
+.lang:hover{border-color:var(--ink)}
+
+.burger{display:flex;align-items:center;gap:12px;background:none;border:none;
+  cursor:pointer;font-family:var(--sans);font-size:12px;text-transform:uppercase;
+  letter-spacing:.2em;color:var(--ink)}
+.burger__bars{display:inline-flex;flex-direction:column;gap:4px}
+.burger__bars i{width:24px;height:1.5px;background:var(--ink);display:block;transition:.3s}
+
+/* ---------- Menu plein écran ---------- */
+.overlay{
+  position:fixed;inset:0;z-index:200;background:var(--lagune);
+  color:var(--ivory);display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transition:.55s var(--ease);
+}
+.overlay.open{opacity:1;visibility:visible}
+.overlay__top{display:flex;justify-content:space-between;align-items:center;
+  padding:26px var(--gut);border-bottom:1px solid rgba(245,241,232,.18)}
+.overlay__close{background:none;border:none;color:var(--ivory);cursor:pointer;
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.overlay__body{flex:1;display:grid;grid-template-columns:1.4fr 1fr;align-items:center;
+  gap:40px;padding:5vh var(--gut)}
+.overlay__nav li{overflow:hidden}
+.overlay__nav a{font-family:var(--serif);font-size:clamp(2rem,5.5vw,4rem);
+  font-weight:300;color:var(--ivory);display:inline-block;padding:6px 0;
+  transition:.4s var(--ease);transform:translateY(110%);opacity:0}
+.overlay.open .overlay__nav a{transform:translateY(0);opacity:1}
+.overlay__nav li:nth-child(1) a{transition-delay:.12s}
+.overlay__nav li:nth-child(2) a{transition-delay:.18s}
+.overlay__nav li:nth-child(3) a{transition-delay:.24s}
+.overlay__nav li:nth-child(4) a{transition-delay:.3s}
+.overlay__nav li:nth-child(5) a{transition-delay:.36s}
+.overlay__nav li:nth-child(6) a{transition-delay:.42s}
+.overlay__nav li:nth-child(7) a{transition-delay:.48s}
+.overlay__nav a:hover{color:var(--gold);padding-left:18px}
+.overlay__aside{border-left:1px solid rgba(245,241,232,.18);padding-left:40px}
+.overlay__aside h4{font-size:1.4rem;margin-bottom:14px}
+.overlay__aside p,.overlay__aside a{color:rgba(245,241,232,.78);font-size:14px;line-height:1.9}
+.overlay__aside .gold{color:var(--gold)}
+
+/* ---------- Layout helpers ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.section{padding:clamp(70px,11vw,150px) 0}
+.section--cream{background:var(--cream)}
+.section--lagune{background:var(--lagune);color:var(--ivory)}
+.section--ink{background:var(--ink);color:var(--ivory)}
+.center{text-align:center}
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,6vw,90px)}
+.split--reverse .split__media{order:2}
+.split__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.stack>*+*{margin-top:22px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:92vh;min-height:560px;display:flex;align-items:flex-end;
+  color:var(--ivory);overflow:hidden}
+.hero__bg{position:absolute;inset:0}
+.hero__slide{position:absolute;inset:0;opacity:0;animation:heroFade 28s infinite}
+.hero__slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);
+  animation:heroZoom 28s ease-in-out infinite}
+.hero__slide:nth-child(1),.hero__slide:nth-child(1) img{animation-delay:0s}
+.hero__slide:nth-child(2),.hero__slide:nth-child(2) img{animation-delay:7s}
+.hero__slide:nth-child(3),.hero__slide:nth-child(3) img{animation-delay:14s}
+.hero__slide:nth-child(4),.hero__slide:nth-child(4) img{animation-delay:21s}
+.hero__bg::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(28,26,24,.22) 0%,rgba(28,26,24,.08) 40%,rgba(28,26,24,.7) 100%)}
+@keyframes heroFade{0%{opacity:0}3%{opacity:1}25%{opacity:1}28%{opacity:0}100%{opacity:0}}
+@keyframes heroZoom{0%{transform:scale(1.04)}28%{transform:scale(1.13)}100%{transform:scale(1.13)}}
+.hero__inner{position:relative;z-index:2;width:100%;padding-bottom:clamp(130px,13vw,170px)}
+.hero .display{margin:.1em 0 .25em}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  z-index:2;color:var(--ivory);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.85}
+.scroll-cue i{width:1px;height:46px;background:var(--ivory);display:block;opacity:.7}
+
+/* page hero (pages intérieures) */
+.pagehero{position:relative;height:54vh;min-height:380px;display:flex;align-items:center;
+  justify-content:center;text-align:center;color:var(--ivory);overflow:hidden}
+.pagehero__bg{position:absolute;inset:0}
+.pagehero__bg img{width:100%;height:100%;object-fit:cover}
+.pagehero__bg::after{content:"";position:absolute;inset:0;background:rgba(28,26,24,.5)}
+.pagehero__inner{position:relative;z-index:2;padding:0 var(--gut)}
+.pagehero .section-title{margin-top:.1em}
+
+/* ---------- Cartes / grilles ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.card{background:var(--white);border:1px solid var(--line)}
+.card__media{overflow:hidden;aspect-ratio:3/2}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:1s var(--ease)}
+.card:hover .card__media img{transform:scale(1.06)}
+.card__body{padding:30px}
+.card__body h3{font-size:1.9rem;margin-bottom:8px}
+.card__meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orchid);margin-bottom:14px}
+.feature-list{font-size:14px;color:var(--ink-soft)}
+.feature-list li{padding:7px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
+.feature-list li::before{content:"—";color:var(--gold)}
+.feature-list li:last-child{border-bottom:none}
+
+/* ---------- Galerie mosaïque ---------- */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+.mosaic figure{overflow:hidden;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:1.1s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.08)}
+.mosaic .tall{grid-row:span 2}
+.mosaic .wide{grid-column:span 2}
+
+/* ---------- Stats / atouts ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.fact .num{font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.6rem);color:var(--gold)}
+.fact .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* ---------- Contact ---------- */
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.field label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea,.field select{
+  font-family:var(--sans);font-size:15px;font-weight:300;color:var(--ink);
+  background:transparent;border:none;border-bottom:1px solid var(--line);
+  padding:10px 2px;transition:.3s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--orchid)}
+.map-embed{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.25) contrast(1.02)}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--ink);color:var(--ivory);padding:80px 0 34px}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px}
+.footer h4{font-family:var(--serif);font-size:1.5rem;margin-bottom:18px;font-weight:300}
+.footer a,.footer p,.footer li{color:rgba(245,241,232,.72);font-size:14px;line-height:2}
+.footer a:hover{color:var(--gold)}
+.footer .logo{text-align:left;color:var(--ivory);font-size:26px}
+.footer .logo small{color:rgba(245,241,232,.55)}
+.footer__social{display:flex;gap:18px;margin-top:18px}
+.footer__social a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(245,241,232,.25);padding:8px 14px}
+.footer__bottom{border-top:1px solid rgba(245,241,232,.15);margin-top:54px;padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:rgba(245,241,232,.5)}
+.footer__bottom a{font-size:12px}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:.9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .split,.grid-2{grid-template-columns:1fr}
+  .split--reverse .split__media{order:0}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .overlay__body{grid-template-columns:1fr}
+  .overlay__aside{border-left:none;border-top:1px solid rgba(245,241,232,.18);padding-left:0;padding-top:30px}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+}
+@media(max-width:600px){
+  .header__inner{height:68px;grid-template-columns:auto 1fr auto;gap:12px}
+  .header__left .navlink{display:none}
+  .logo{font-size:17px}
+  .header .btn{display:none}
+  .grid-3{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .mosaic .wide{grid-column:span 2}
+  .mosaic .tall{grid-row:span 1}
+}
+
+.page[hidden]{display:none!important}
+#lang-en[hidden],#lang-fr[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     FRANÇAIS
+══════════════════════════════════════════════════════ -->
+<div id="lang-fr">
+
+<div class="marquee">
+  <div class="marquee__track">
+    <span>Réservation en direct</span><span class="dot">·</span>
+    <span>Petit-déjeuner continental offert</span><span class="dot">·</span>
+    <span>En bordure de la lagune Ébrié</span><span class="dot">·</span>
+    <span>Hôtel 3 étoiles à Abidjan</span><span class="dot">·</span>
+    <span>Événements jusqu'à 1 000 personnes</span><span class="dot">·</span>
+    <span>Réservation en direct</span><span class="dot">·</span>
+    <span>Petit-déjeuner continental offert</span><span class="dot">·</span>
+    <span>En bordure de la lagune Ébrié</span><span class="dot">·</span>
+    <span>Hôtel 3 étoiles à Abidjan</span><span class="dot">·</span>
+    <span>Événements jusqu'à 1 000 personnes</span><span class="dot">·</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header__inner">
+    <div class="header__left">
+      <button class="burger" data-open-menu aria-label="Ouvrir le menu">
+        <span class="burger__bars"><i></i><i></i><i></i></span> Menu
+      </button>
+      <a class="navlink" href="#chambres" data-nav="chambres">Chambres</a>
+      <a class="navlink" href="#restaurant" data-nav="restaurant">Restaurant</a>
+    </div>
+    <a class="logo" href="#hotel" data-nav="hotel">La Baie des Orchidées<small>Biétry · Abidjan · Hôtel 3 étoiles</small></a>
+    <div class="header__right">
+      <a class="lang" href="#">EN</a>
+      <a class="btn btn--solid" href="#contact" data-nav="contact">Réserver</a>
+    </div>
+  </div>
+</header>
+
+<!-- Menu plein écran -->
+<div class="overlay" id="overlay-fr">
+  <div class="overlay__top">
+    <span class="logo" style="color:var(--ivory)">La Baie des Orchidées</span>
+    <button class="overlay__close" data-close-menu>Fermer <span style="font-size:18px">✕</span></button>
+  </div>
+  <div class="overlay__body">
+    <ul class="overlay__nav">
+      <li><a href="#hotel" data-nav="hotel" style="color:var(--gold)">L'Hôtel</a></li>
+      <li><a href="#chambres" data-nav="chambres">Chambres &amp; Suites</a></li>
+      <li><a href="#restaurant" data-nav="restaurant">Restaurant &amp; Bar</a></li>
+      <li><a href="#petitdej" data-nav="petitdej">Petit Déjeuner</a></li>
+      <li><a href="#evenements" data-nav="evenements">Réceptions &amp; Événements</a></li>
+      <li><a href="#galerie" data-nav="galerie">Galerie Photos</a></li>
+      <li><a href="#contact" data-nav="contact">Accès &amp; Contact</a></li>
+    </ul>
+    <div class="overlay__aside">
+      <h4>Contactez-nous</h4>
+      <p class="gold">+225 07 68 92 04 42</p>
+      <p>+225 27 21 59 42 47</p>
+      <p>Bd de Marseille / Rue Paul Kagamé<br>Zone 4 Biétry, Marcory, Abidjan</p>
+      <p style="margin-top:18px"><a href="https://facebook.com/labaiedesorchidees" class="gold" target="_blank">Facebook</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PAGE : L'HÔTEL ─────────────────────────────────── -->
+<div class="page" data-page="hotel">
+
+<section class="hero">
+  <div class="hero__bg">
+    <div class="hero__slide"><img src="images/piscine.png" alt="La piscine de La Baie des Orchidées"></div>
+    <div class="hero__slide"><img src="images/restaurant%203.png" alt="Le jardin en bordure de lagune"></div>
+    <div class="hero__slide"><img src="images/ambiance.png" alt="Ambiance de l'hôtel"></div>
+    <div class="hero__slide"><img src="images/paysage%201.png" alt="Vue sur la lagune Ébrié"></div>
+  </div>
+  <div class="hero__inner wrap">
+    <p class="eyebrow" style="color:var(--gold)">Hôtel · Piscine · Restaurant · Réceptions</p>
+    <h1 class="display">Un trésor<br>en bord de lagune</h1>
+    <p class="lead" style="color:var(--ivory);max-width:580px">Un cadre d'exception mêlant charme, raffinement et design, niché au cœur de Biétry, en bordure de la lagune Ébrié.</p>
+    <div style="margin-top:34px;display:flex;gap:16px;flex-wrap:wrap">
+      <a class="btn btn--solid" href="#chambres" data-nav="chambres">Découvrir les chambres</a>
+      <a class="btn btn--light" href="#contact" data-nav="contact">Réserver un séjour</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#intro"><span>Découvrir</span><i></i></a>
+</section>
+
+<section class="section" id="intro">
+  <div class="wrap center reveal" style="max-width:840px">
+    <p class="eyebrow">Bienvenue</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Intimité, élégance<br>et douceur de vivre</h2>
+    <p class="lead">Niché à Biétry, en Zone 4 de Marcory, La Baie des Orchidées vous accueille dans un écrin de verdure baigné par la lagune Ébrié. Loin de l'agitation de la ville, à seulement 6 km de l'aéroport international Félix-Houphouët-Boigny.</p>
+    <p style="margin-top:18px;color:var(--ink-soft)">Ses chambres coquettes, magnifiquement décorées, donnent sur un jardin luxuriant, une piscine extérieure et un restaurant proposant cuisine locale et internationale. Un cadre idéal pour profiter du moment en toute intimité, célébrer ou organiser des événements mémorables.</p>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><div class="num">12</div><div class="lbl">Chambres &amp; suites</div></div>
+      <div class="fact"><div class="num">8 000<span style="font-size:1.4rem"> m²</span></div><div class="lbl">En bordure de lagune</div></div>
+      <div class="fact"><div class="num">6<span style="font-size:1.4rem"> km</span></div><div class="lbl">De l'aéroport</div></div>
+      <div class="fact"><div class="num">1 000</div><div class="lbl">Personnes en événement</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant.png" alt="Restaurant de La Baie des Orchidées"></div>
+    <div class="stack">
+      <p class="eyebrow">Restaurant</p>
+      <h2 class="section-title">Saveurs locales<br>&amp; internationales</h2>
+      <p>Notre restaurant propose une cuisine généreuse alliant les meilleures spécialités locales aux influences internationales. Profitez d'un dîner aux chandelles dans le jardin luxuriant ou d'un verre au clair de lune au bord de la piscine.</p>
+      <p style="color:var(--muted);font-size:14px;letter-spacing:.04em">Cuisine locale &amp; internationale · Réservation recommandée</p>
+      <div><a class="btn" href="#restaurant" data-nav="restaurant">En savoir +</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/jardin%202.png" alt="Le jardin de l'hôtel"></div>
+    <div class="stack">
+      <p class="eyebrow">Chaque matin</p>
+      <h2 class="section-title">Petit-déjeuner<br>continental offert</h2>
+      <p>Commencez chaque journée en douceur avec notre petit-déjeuner continental, servi tous les jours de 6h à 11h. Un moment de calme et de saveurs, dans le cadre enchanteur de notre jardin, les pieds dans l'herbe verte baignée de lumière lagunaire.</p>
+      <div><a class="btn" href="#petitdej" data-nav="petitdej">En savoir +</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--lagune">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/ambiance%202.png" alt="Espace événementiel"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Événements</p>
+      <h2 class="section-title">Mariages, réceptions<br>&amp; séminaires</h2>
+      <p style="color:rgba(245,241,232,.85)">Avec un espace pouvant accueillir jusqu'à 1 000 personnes, La Baie des Orchidées est le cadre idéal pour vos célébrations les plus précieuses. Mariage romantique dans le jardin, séminaire d'entreprise ou réception en plein air — chaque moment est pensé pour vous.</p>
+      <div><a class="btn btn--light" href="#evenements" data-nav="evenements">Organiser votre événement</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:46px">
+      <p class="eyebrow">En images</p>
+      <h2 class="section-title">L'esprit de la maison</h2>
+    </div>
+    <div class="mosaic reveal">
+      <figure class="tall"><img src="images/piscine.png" alt="La piscine"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Le jardin"></figure>
+      <figure><img src="images/chambre.png" alt="Une chambre"></figure>
+      <figure class="wide"><img src="images/ambiance%204.png" alt="Ambiance"></figure>
+      <figure><img src="images/restaurant%202.png" alt="Le restaurant"></figure>
+      <figure><img src="images/paysage%202.png" alt="La lagune Ébrié"></figure>
+    </div>
+    <div class="center" style="margin-top:40px"><a class="btn" href="#galerie" data-nav="galerie">Voir la galerie complète</a></div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/paysage%203.png" alt="Vue sur la lagune"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Localisation</p>
+      <h2 class="section-title">Un emplacement<br>d'exception</h2>
+      <p style="color:rgba(245,241,232,.85)">Implanté sur le Boulevard de Marseille, en Zone 4 Biétry (Marcory), sur 8 000 m² en bordure de la lagune Ébrié, l'hôtel offre calme et sécurité au cœur d'Abidjan. À 6 km de l'aéroport international, à 360 m de Notre-Dame d'Afrique de Biétry.</p>
+      <div><a class="btn btn--light" href="#contact" data-nav="contact">Accès &amp; contact</a></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page hotel -->
+
+
+<!-- ── PAGE : CHAMBRES ───────────────────────────────── -->
+<div class="page" data-page="chambres" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/chambre%202.png" alt="Chambres &amp; Suites"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Hébergement</p>
+    <h1 class="section-title">Chambres &amp; Suites</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Une douzaine de chambres coquettes, magnifiquement décorées, pour un séjour romantique et intime.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center reveal" style="max-width:780px;margin-bottom:60px">
+    <p class="eyebrow">Confort &amp; élégance</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Des chambres pensées<br>pour l'intimité</h2>
+    <p class="lead">Chaque chambre, climatisée, dispose d'une télévision à écran plat, d'un accès Wi-Fi gratuit, de chaînes par satellite et d'une salle de bain privée. Certaines comprennent un balcon ouvert sur le jardin verdoyant.</p>
+  </div>
+  <div class="wrap">
+    <div class="mosaic reveal" style="margin-bottom:50px">
+      <figure class="tall"><img src="images/chambre.png" alt="Chambre de La Baie des Orchid&eacute;es"></figure>
+      <figure><img src="images/chambre%203.png" alt="Chambre &eacute;l&eacute;gamment d&eacute;cor&eacute;e"></figure>
+      <figure><img src="images/chambre%202.png" alt="Atmosph&egrave;re feutr&eacute;e d'une chambre"></figure>
+      <figure class="wide"><img src="images/chambre%205.png" alt="Chambre spacieuse et lumineuse"></figure>
+      <figure><img src="images/chambre%204.png" alt="Chambre avec balcon"></figure>
+      <figure><img src="images/salle%20de%20bain.png" alt="Salle de bain priv&eacute;e"></figure>
+    </div>
+    <div class="center reveal" style="max-width:680px;margin:0 auto">
+      <p style="color:var(--ink-soft);margin-bottom:26px">Quelques chambres coquettes, toutes singuli&egrave;res &mdash; mais une m&ecirc;me promesse de confort et de douceur. Chacune r&eacute;unit&nbsp;:</p>
+      <ul class="feature-list" style="display:inline-block;text-align:left;columns:2;column-gap:48px;margin-bottom:6px">
+        <li>Climatisation</li>
+        <li>Wi-Fi gratuit</li>
+        <li>T&eacute;l&eacute;vision &eacute;cran plat &middot; Satellite</li>
+        <li>Salle de bain priv&eacute;e</li>
+        <li>Articles de toilette &amp; chaussons</li>
+        <li>Serviettes &amp; linge de lit</li>
+        <li>Bureau</li>
+        <li>Balcon (certaines chambres)</li>
+      </ul>
+      <div style="margin-top:36px"><a class="btn btn--solid" href="#contact" data-nav="contact">Demander une chambre</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/salle%20de%20bain.png" alt="Salle de bain"></div>
+    <div class="stack">
+      <p class="eyebrow">Détails</p>
+      <h2 class="section-title">Un soin du détail<br>à chaque instant</h2>
+      <p>De la salle de bain soignée aux lits parés de linge de qualité, chaque espace est conçu pour vous offrir confort et sérénité. Un dépôt de garantie en espèces peut être demandé à l'arrivée pour les frais accessoires.</p>
+      <ul class="feature-list" style="max-width:420px">
+        <li>Check-in à partir de 14h00</li>
+        <li>Check-out avant 12h00</li>
+        <li>Réception ouverte 24h/24</li>
+        <li>Service d'étage disponible</li>
+        <li>Personnel francophone &amp; anglophone</li>
+        <li>Parking gratuit sur place</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page chambres -->
+
+
+<!-- ── PAGE : RESTAURANT & BAR ──────────────────────── -->
+<div class="page" data-page="restaurant" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/restaurant.png" alt="Restaurant &amp; Bar"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Gastronomie</p>
+    <h1 class="section-title">Restaurant &amp; Bar</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Cuisine locale et internationale servie dans un cadre verdoyant, au cœur du jardin.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant%202.png" alt="La table"></div>
+    <div class="stack">
+      <p class="eyebrow">La table</p>
+      <h2 class="section-title">Cuisines du monde<br>au fil des saveurs</h2>
+      <p>Notre restaurant propose une carte généreuse mêlant les meilleures spécialités ivoiriennes et africaines aux grandes cuisines internationales. Chaque assiette est préparée avec soin, pour un repas en famille, entre amis ou en tête-à-tête.</p>
+      <p style="color:var(--muted);font-size:14px">Déjeuner &amp; Dîner · Service en salle et en terrasse</p>
+      <div><a class="btn btn--solid" href="#contact" data-nav="contact">Réserver une table</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--lagune">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/bar.png" alt="Le Bar"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Le Bar</p>
+      <h2 class="section-title">Un verre au clair<br>de lune</h2>
+      <p style="color:rgba(245,241,232,.85)">Au bord de la piscine, notre bar vous invite à prolonger la soirée dans une atmosphère intime et romantique. Cocktails, boissons fraîches, vins sélectionnés — chaque instant devient une parenthèse de douceur.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:40px"><p class="eyebrow">Ambiance</p><h2 class="section-title">À table</h2></div>
+    <div class="grid-3 reveal">
+      <div class="card__media"><img src="images/restaurant%203.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+      <div class="card__media"><img src="images/salon.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+      <div class="card__media"><img src="images/ambiance%204.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page restaurant -->
+
+
+<!-- ── PAGE : PETIT DÉJEUNER ────────────────────────── -->
+<div class="page" data-page="petitdej" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/jardin%203.png" alt="Petit Déjeuner"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Chaque matin</p>
+    <h1 class="section-title">Petit Déjeuner</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Un petit-déjeuner continental servi chaque matin, offert à tous nos résidents.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant%203.png" alt="Petit déjeuner au jardin"></div>
+    <div class="stack">
+      <p class="eyebrow">Le matin</p>
+      <h2 class="section-title">Un réveil en douceur</h2>
+      <p>Chaque matin, notre équipe vous prépare un petit-déjeuner continental complet, servi dans le cadre enchanteur de notre jardin verdoyant. Profitez de la fraîcheur du matin et de la lumière de la lagune avant d'entamer votre journée.</p>
+      <p style="color:var(--muted);font-size:14px">Servi tous les jours de <strong>6h00 à 11h00</strong> · Gratuit pour tous les résidents</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/piscine%202.png" alt="Ambiance matinale"></div>
+    <div class="stack">
+      <p class="eyebrow">Services inclus</p>
+      <h2 class="section-title">Tout le confort<br>pour bien démarrer</h2>
+      <p>Au-delà du petit-déjeuner, notre équipe est à votre disposition 24h/24 pour répondre à toutes vos demandes. Service d'étage, conseils sur les activités à proximité, organisation de transports — nous veillons à chaque détail de votre séjour.</p>
+      <ul class="feature-list" style="max-width:400px">
+        <li>Petit-déjeuner continental offert</li>
+        <li>Wi-Fi gratuit dans tout l'établissement</li>
+        <li>Parking gratuit sur place</li>
+        <li>Réception 24h/24 · Service d'étage</li>
+        <li>Personnel francophone &amp; anglophone</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page petitdej -->
+
+
+<!-- ── PAGE : RÉCEPTIONS & ÉVÉNEMENTS ───────────────── -->
+<div class="page" data-page="evenements" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/ambiance%202.png" alt="Réceptions &amp; Événements"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Célébrations</p>
+    <h1 class="section-title">Réceptions &amp; Événements</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Un cadre d'exception pour vos plus beaux moments, jusqu'à 1 000 personnes.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/jardin%202.png" alt="Jardin pour événements"></div>
+    <div class="stack">
+      <p class="eyebrow">Mariages &amp; Célébrations</p>
+      <h2 class="section-title">Votre mariage<br>de rêve</h2>
+      <p>Imaginez votre mariage dans notre jardin luxuriant, au bord de la lagune Ébrié. La Baie des Orchidées offre un cadre romantique et intime pour célébrer cet instant unique avec ceux qui vous sont chers. Dîner aux chandelles, décoration florale, traiteur — chaque détail est organisé selon vos désirs.</p>
+      <div><a class="btn btn--solid" href="#contact" data-nav="contact">Organiser votre mariage</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--lagune">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/ambiance%204.png" alt="Séminaires d'entreprise"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Professionnels</p>
+      <h2 class="section-title">Séminaires<br>&amp; réunions d'affaires</h2>
+      <p style="color:rgba(245,241,232,.85)">À l'écart de l'agitation, notre espace offre un cadre propice à la concentration et à la créativité. Séminaires résidentiels, réunions de direction, formations — notre équipe accompagne chaque projet avec discrétion et efficacité.</p>
+      <div><a class="btn btn--light" href="#contact" data-nav="contact">Organiser votre séminaire</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><div class="num">1 000</div><div class="lbl">Personnes en réception</div></div>
+      <div class="fact"><div class="num">8 000<span style="font-size:1.4rem"> m²</span></div><div class="lbl">De domaine</div></div>
+      <div class="fact"><div class="num">★</div><div class="lbl">Traiteur sur mesure</div></div>
+      <div class="fact"><div class="num">24<span style="font-size:1.4rem">h</span></div><div class="lbl">À votre service</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap center reveal" style="max-width:780px">
+    <p class="eyebrow">Types d'événements</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Chaque occasion<br>mérite un cadre parfait</h2>
+    <p class="lead">Mariages, anniversaires, baptêmes, soirées d'entreprise, lancements de produits, séminaires résidentiels — la Baie des Orchidées s'adapte à chaque projet et met son expérience au service de votre événement.</p>
+    <div style="margin-top:34px"><a class="btn btn--solid" href="#contact" data-nav="contact">Nous contacter pour votre projet</a></div>
+  </div>
+</section>
+
+</div><!-- /page evenements -->
+
+
+<!-- ── PAGE : GALERIE ────────────────────────────────── -->
+<div class="page" data-page="galerie" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/paysage%202.png" alt="Galerie Photos"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">En images</p>
+    <h1 class="section-title">Galerie Photos</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Chambres, piscine, jardin, restaurant et lagune : l'esprit de La Baie des Orchidées.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="mosaic reveal">
+      <figure class="wide"><img src="images/piscine.png" alt="La piscine"></figure>
+      <figure><img src="images/chambre.png" alt="Chambre"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Jardin"></figure>
+      <figure class="tall"><img src="images/restaurant.png" alt="Restaurant"></figure>
+      <figure><img src="images/bar.png" alt="Bar"></figure>
+      <figure><img src="images/ambiance.png" alt="Ambiance"></figure>
+      <figure><img src="images/paysage%201.png" alt="Lagune"></figure>
+      <figure><img src="images/chambre%202.png" alt="Chambre"></figure>
+      <figure class="wide"><img src="images/jardin%202.png" alt="Jardin"></figure>
+      <figure><img src="images/piscine%202.png" alt="Piscine"></figure>
+      <figure><img src="images/restaurant%202.png" alt="Restaurant"></figure>
+      <figure><img src="images/chambre%203.png" alt="Chambre"></figure>
+      <figure><img src="images/ambiance%202.png" alt="Ambiance"></figure>
+      <figure><img src="images/paysage%202.png" alt="Paysage"></figure>
+      <figure><img src="images/salon.png" alt="Salon"></figure>
+      <figure><img src="images/salle%20de%20bain.png" alt="Salle de bain"></figure>
+      <figure><img src="images/chambre%204.png" alt="Chambre"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Restaurant"></figure>
+      <figure><img src="images/jardin%203.png" alt="Jardin"></figure>
+      <figure><img src="images/ambiance%204.png" alt="Ambiance"></figure>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page galerie -->
+
+
+<!-- ── PAGE : CONTACT ────────────────────────────────── -->
+<div class="page" data-page="contact" hidden>
+
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/paysage%203.png" alt="Accès &amp; Contact"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Nous trouver</p>
+    <h1 class="section-title">Accès &amp; Contact</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Zone 4 Biétry, Marcory, Abidjan — à 6 km de l'aéroport international.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid-2" style="align-items:start">
+    <div class="stack reveal">
+      <p class="eyebrow">Réservation &amp; renseignements</p>
+      <h2 class="section-title">Écrivez-nous</h2>
+      <form id="contact-form-fr">
+        <div class="field"><label>Nom complet</label><input type="text" required></div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field"><label>Téléphone</label><input type="tel"></div>
+        <div class="field"><label>Objet</label>
+          <select>
+            <option>Réservation chambre</option>
+            <option>Restaurant</option>
+            <option>Mariage / Réception</option>
+            <option>Séminaire / Événement</option>
+            <option>Autre renseignement</option>
+          </select>
+        </div>
+        <div class="field"><label>Dates souhaitées</label><input type="text" placeholder="ex. 15 – 17 juillet 2026"></div>
+        <div class="field"><label>Message</label><textarea rows="4"></textarea></div>
+        <button class="btn btn--solid" type="submit">Envoyer</button>
+        <p id="form-msg-fr" style="display:none;margin-top:16px;color:var(--lagune)">Merci, votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.</p>
+      </form>
+    </div>
+    <div class="stack reveal">
+      <div class="card" style="padding:30px;margin-bottom:30px">
+        <h3 style="font-size:1.7rem;margin-bottom:18px">La Baie des Orchidées</h3>
+        <p style="color:var(--ink-soft);line-height:2.1">
+          Boulevard de Marseille / Rue Paul Kagamé<br>
+          Zone 4 Biétry, Marcory<br>
+          Abidjan, Côte d'Ivoire<br><br>
+          <strong>Mobile</strong><br>
+          <a href="tel:+2250768920442" style="color:var(--orchid)">+225 07 68 92 04 42</a><br><br>
+          <strong>Fixe</strong><br>
+          <a href="tel:+2252721594247" style="color:var(--orchid)">+225 27 21 59 42 47</a><br><br>
+          <strong>Facebook</strong><br>
+          <a href="https://facebook.com/labaiedesorchidees" style="color:var(--orchid)" target="_blank">facebook.com/labaiedesorchidees</a><br><br>
+          <strong>Check-in</strong> à partir de 14h00<br>
+          <strong>Check-out</strong> avant 12h00<br>
+          Âge minimum : 18 ans
+        </p>
+      </div>
+      <iframe class="map-embed" title="Carte — La Baie des Orchidées, Biétry Abidjan" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-3.99307%2C5.2556%2C-3.95307%2C5.2856&amp;layer=mapnik&amp;marker=5.2706%2C-3.97307"></iframe>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page contact -->
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="#hotel" data-nav="hotel">La Baie des Orchidées<small>Biétry · Abidjan · Hôtel 3 étoiles</small></a>
+        <p style="margin-top:18px;max-width:280px">Un petit trésor caché en bordure de lagune à Biétry — charme, raffinement et design au cœur d'Abidjan.</p>
+        <div class="footer__social">
+          <a href="https://facebook.com/labaiedesorchidees" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4>Naviguer</h4>
+        <ul>
+          <li><a href="#hotel" data-nav="hotel">L'Hôtel</a></li>
+          <li><a href="#chambres" data-nav="chambres">Chambres &amp; Suites</a></li>
+          <li><a href="#restaurant" data-nav="restaurant">Restaurant &amp; Bar</a></li>
+          <li><a href="#petitdej" data-nav="petitdej">Petit Déjeuner</a></li>
+          <li><a href="#evenements" data-nav="evenements">Réceptions &amp; Événements</a></li>
+          <li><a href="#galerie" data-nav="galerie">Galerie Photos</a></li>
+          <li><a href="#contact" data-nav="contact">Accès &amp; Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Infos pratiques</h4>
+        <ul>
+          <li><a href="#chambres" data-nav="chambres">Check-in 14h / Check-out 12h</a></li>
+          <li><a href="#chambres" data-nav="chambres">Parking gratuit</a></li>
+          <li><a href="#petitdej" data-nav="petitdej">Petit-déjeuner offert</a></li>
+          <li><a href="#evenements" data-nav="evenements">Événements jusqu'à 1 000 pers.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous trouver</h4>
+        <p>Bd de Marseille / Rue Paul Kagamé<br>Zone 4 Biétry, Marcory<br>Abidjan, Côte d'Ivoire</p>
+        <p style="margin-top:12px"><a href="tel:+2250768920442">+225 07 68 92 04 42</a></p>
+        <p><a href="tel:+2252721594247">+225 27 21 59 42 47</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span class="year-fr"></span> La Baie des Orchidées · Zone 4 Biétry, Marcory, Abidjan, Côte d'Ivoire</span>
+      <span>Réservation en direct · Petit-déjeuner offert · Parking gratuit</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /lang-fr -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     ENGLISH
+══════════════════════════════════════════════════════ -->
+<div id="lang-en" hidden>
+
+<div class="marquee">
+  <div class="marquee__track">
+    <span>Direct booking</span><span class="dot">·</span>
+    <span>Complimentary continental breakfast</span><span class="dot">·</span>
+    <span>Overlooking the Ébrié lagoon</span><span class="dot">·</span>
+    <span>3-star boutique hotel in Abidjan</span><span class="dot">·</span>
+    <span>Events up to 1,000 guests</span><span class="dot">·</span>
+    <span>Direct booking</span><span class="dot">·</span>
+    <span>Complimentary continental breakfast</span><span class="dot">·</span>
+    <span>Overlooking the Ébrié lagoon</span><span class="dot">·</span>
+    <span>3-star boutique hotel in Abidjan</span><span class="dot">·</span>
+    <span>Events up to 1,000 guests</span><span class="dot">·</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header__inner">
+    <div class="header__left">
+      <button class="burger" data-open-menu aria-label="Open menu">
+        <span class="burger__bars"><i></i><i></i><i></i></span> Menu
+      </button>
+      <a class="navlink" href="#chambres" data-nav="chambres">Rooms</a>
+      <a class="navlink" href="#restaurant" data-nav="restaurant">Restaurant</a>
+    </div>
+    <a class="logo" href="#hotel" data-nav="hotel">La Baie des Orchidées<small>Biétry · Abidjan · 3-star Hotel</small></a>
+    <div class="header__right">
+      <a class="lang" href="#">FR</a>
+      <a class="btn btn--solid" href="#contact" data-nav="contact">Book</a>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay-en">
+  <div class="overlay__top">
+    <span class="logo" style="color:var(--ivory)">La Baie des Orchidées</span>
+    <button class="overlay__close" data-close-menu>Close <span style="font-size:18px">✕</span></button>
+  </div>
+  <div class="overlay__body">
+    <ul class="overlay__nav">
+      <li><a href="#hotel" data-nav="hotel" style="color:var(--gold)">The Hotel</a></li>
+      <li><a href="#chambres" data-nav="chambres">Rooms &amp; Suites</a></li>
+      <li><a href="#restaurant" data-nav="restaurant">Restaurant &amp; Bar</a></li>
+      <li><a href="#petitdej" data-nav="petitdej">Breakfast</a></li>
+      <li><a href="#evenements" data-nav="evenements">Events &amp; Receptions</a></li>
+      <li><a href="#galerie" data-nav="galerie">Photo Gallery</a></li>
+      <li><a href="#contact" data-nav="contact">Access &amp; Contact</a></li>
+    </ul>
+    <div class="overlay__aside">
+      <h4>Contact us</h4>
+      <p class="gold">+225 07 68 92 04 42</p>
+      <p>+225 27 21 59 42 47</p>
+      <p>Bd de Marseille / Rue Paul Kagamé<br>Zone 4 Biétry, Marcory, Abidjan</p>
+      <p style="margin-top:18px"><a href="https://facebook.com/labaiedesorchidees" class="gold" target="_blank">Facebook</a></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PAGE : THE HOTEL ──────────────────────────────── -->
+<div class="page" data-page="hotel">
+
+<section class="hero">
+  <div class="hero__bg">
+    <div class="hero__slide"><img src="images/piscine.png" alt="Hotel pool"></div>
+    <div class="hero__slide"><img src="images/restaurant%203.png" alt="Lagoon garden"></div>
+    <div class="hero__slide"><img src="images/ambiance.png" alt="Hotel atmosphere"></div>
+    <div class="hero__slide"><img src="images/paysage%201.png" alt="Ébrié lagoon view"></div>
+  </div>
+  <div class="hero__inner wrap">
+    <p class="eyebrow" style="color:var(--gold)">Hotel · Pool · Restaurant · Events</p>
+    <h1 class="display">A hidden gem<br>by the lagoon</h1>
+    <p class="lead" style="color:var(--ivory);max-width:580px">An exceptional setting blending charm, refinement and design, nestled at the heart of Biétry, on the shores of the Ébrié lagoon.</p>
+    <div style="margin-top:34px;display:flex;gap:16px;flex-wrap:wrap">
+      <a class="btn btn--solid" href="#chambres" data-nav="chambres">Discover the rooms</a>
+      <a class="btn btn--light" href="#contact" data-nav="contact">Book a stay</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#intro"><span>Discover</span><i></i></a>
+</section>
+
+<section class="section" id="intro">
+  <div class="wrap center reveal" style="max-width:840px">
+    <p class="eyebrow">Welcome</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Intimacy, elegance<br>and the art of living</h2>
+    <p class="lead">Nestled in Biétry, Zone 4 of Marcory, La Baie des Orchidées welcomes you into a verdant haven bathed by the Ébrié lagoon — just 6 km from Félix-Houphouët-Boigny International Airport.</p>
+    <p style="margin-top:18px;color:var(--ink-soft)">Its beautifully appointed rooms overlook a lush garden, an outdoor pool and a restaurant serving local and international cuisine. An ideal setting for intimate stays, romantic getaways or unforgettable events.</p>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><div class="num">12</div><div class="lbl">Rooms &amp; suites</div></div>
+      <div class="fact"><div class="num">8,000<span style="font-size:1.4rem"> m²</span></div><div class="lbl">Lagoonside grounds</div></div>
+      <div class="fact"><div class="num">6<span style="font-size:1.4rem"> km</span></div><div class="lbl">From the airport</div></div>
+      <div class="fact"><div class="num">1,000</div><div class="lbl">Guests capacity</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant.png" alt="Restaurant"></div>
+    <div class="stack">
+      <p class="eyebrow">Restaurant</p>
+      <h2 class="section-title">Local &amp; international<br>flavours</h2>
+      <p>Our restaurant offers a generous menu combining the finest Ivorian specialities with international cuisines. Enjoy a candlelit dinner in the lush garden or a moonlit drink by the poolside.</p>
+      <p style="color:var(--muted);font-size:14px;letter-spacing:.04em">Local &amp; international cuisine · Reservation recommended</p>
+      <div><a class="btn" href="#restaurant" data-nav="restaurant">Learn more</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/jardin%202.png" alt="Garden"></div>
+    <div class="stack">
+      <p class="eyebrow">Every morning</p>
+      <h2 class="section-title">Complimentary<br>continental breakfast</h2>
+      <p>Begin every day gently with our complimentary continental breakfast, served daily from 6am to 11am. A moment of calm and flavour in our enchanting garden, bathed in the soft light of the lagoon.</p>
+      <div><a class="btn" href="#petitdej" data-nav="petitdej">Learn more</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--lagune">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/ambiance%202.png" alt="Events"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Events</p>
+      <h2 class="section-title">Weddings, receptions<br>&amp; seminars</h2>
+      <p style="color:rgba(245,241,232,.85)">With a capacity of up to 1,000 guests, La Baie des Orchidées is the perfect setting for your most cherished celebrations. A romantic garden wedding, corporate seminar or open-air reception — each moment is crafted for you.</p>
+      <div><a class="btn btn--light" href="#evenements" data-nav="evenements">Plan your event</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:46px">
+      <p class="eyebrow">In pictures</p>
+      <h2 class="section-title">The spirit of the house</h2>
+    </div>
+    <div class="mosaic reveal">
+      <figure class="tall"><img src="images/piscine.png" alt="Pool"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Garden"></figure>
+      <figure><img src="images/chambre.png" alt="Room"></figure>
+      <figure class="wide"><img src="images/ambiance%204.png" alt="Atmosphere"></figure>
+      <figure><img src="images/restaurant%202.png" alt="Restaurant"></figure>
+      <figure><img src="images/paysage%202.png" alt="Lagoon"></figure>
+    </div>
+    <div class="center" style="margin-top:40px"><a class="btn" href="#galerie" data-nav="galerie">View full gallery</a></div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/paysage%203.png" alt="Lagoon view"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Location</p>
+      <h2 class="section-title">An exceptional<br>address</h2>
+      <p style="color:rgba(245,241,232,.85)">Set on Boulevard de Marseille in Zone 4 Biétry (Marcory), across 8,000 m² on the banks of the Ébrié lagoon, the hotel offers tranquillity and security in the heart of Abidjan. 6 km from the international airport, 360 m from Notre-Dame d'Afrique de Biétry.</p>
+      <div><a class="btn btn--light" href="#contact" data-nav="contact">Access &amp; contact</a></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="page" data-page="chambres" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/chambre%202.png" alt="Rooms &amp; Suites"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Accommodation</p>
+    <h1 class="section-title">Rooms &amp; Suites</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Around twelve beautifully decorated rooms for a romantic and intimate stay.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap center reveal" style="max-width:780px;margin-bottom:60px">
+    <p class="eyebrow">Comfort &amp; elegance</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Rooms designed<br>for intimacy</h2>
+    <p class="lead">Every room is air-conditioned with a flat-screen TV, complimentary Wi-Fi, satellite channels and a private bathroom. Some feature a balcony opening onto the lush garden.</p>
+  </div>
+  <div class="wrap">
+    <div class="mosaic reveal" style="margin-bottom:50px">
+      <figure class="tall"><img src="images/chambre.png" alt="Room at La Baie des Orchid&eacute;es"></figure>
+      <figure><img src="images/chambre%203.png" alt="Elegantly decorated room"></figure>
+      <figure><img src="images/chambre%202.png" alt="Intimate room atmosphere"></figure>
+      <figure class="wide"><img src="images/chambre%205.png" alt="Spacious, light-filled room"></figure>
+      <figure><img src="images/chambre%204.png" alt="Room with balcony"></figure>
+      <figure><img src="images/salle%20de%20bain.png" alt="Private bathroom"></figure>
+    </div>
+    <div class="center reveal" style="max-width:680px;margin:0 auto">
+      <p style="color:var(--ink-soft);margin-bottom:26px">A handful of charming rooms, each one unique &mdash; yet all sharing the same promise of comfort and ease. Every room features:</p>
+      <ul class="feature-list" style="display:inline-block;text-align:left;columns:2;column-gap:48px;margin-bottom:6px">
+        <li>Air conditioning</li>
+        <li>Free Wi-Fi</li>
+        <li>Flat-screen TV &middot; Satellite</li>
+        <li>Private bathroom</li>
+        <li>Toiletries &amp; slippers</li>
+        <li>Towels &amp; bed linen</li>
+        <li>Desk</li>
+        <li>Balcony (selected rooms)</li>
+      </ul>
+      <div style="margin-top:36px"><a class="btn btn--solid" href="#contact" data-nav="contact">Enquire about a room</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section--cream">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/salle%20de%20bain.png" alt="Bathroom"></div>
+    <div class="stack">
+      <p class="eyebrow">Details</p>
+      <h2 class="section-title">Attention to detail<br>at every moment</h2>
+      <p>From the carefully appointed bathroom to the quality bed linen, every space is designed for your comfort and serenity. A cash deposit may be required at check-in for incidental charges.</p>
+      <ul class="feature-list" style="max-width:420px">
+        <li>Check-in from 2:00 PM</li><li>Check-out before 12:00 PM</li>
+        <li>24-hour reception</li><li>Room service available</li>
+        <li>French &amp; English-speaking staff</li><li>Free on-site parking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="restaurant" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/restaurant.png" alt="Restaurant &amp; Bar"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Gastronomy</p>
+    <h1 class="section-title">Restaurant &amp; Bar</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Local and international cuisine served in a lush garden setting.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant%202.png" alt="The table"></div>
+    <div class="stack">
+      <p class="eyebrow">The table</p>
+      <h2 class="section-title">World flavours,<br>crafted with care</h2>
+      <p>Our restaurant offers a generous menu blending the finest Ivorian specialities with international cuisines. Every dish is prepared with care — perfect for a family meal, dinner with friends or a romantic tête-à-tête.</p>
+      <p style="color:var(--muted);font-size:14px">Lunch &amp; Dinner · Indoor and terrace dining</p>
+      <div><a class="btn btn--solid" href="#contact" data-nav="contact">Reserve a table</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section--lagune">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/bar.png" alt="The Bar"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">The Bar</p>
+      <h2 class="section-title">A moonlit drink<br>by the pool</h2>
+      <p style="color:rgba(245,241,232,.85)">By the poolside, our bar invites you to extend the evening in an intimate, romantic atmosphere. Cocktails, chilled drinks, carefully selected wines — every moment becomes a gentle pause.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:40px"><p class="eyebrow">Atmosphere</p><h2 class="section-title">At the table</h2></div>
+    <div class="grid-3 reveal">
+      <div class="card__media"><img src="images/restaurant%203.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+      <div class="card__media"><img src="images/salon.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+      <div class="card__media"><img src="images/ambiance%204.png" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover"></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="petitdej" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/jardin%203.png" alt="Breakfast"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Every morning</p>
+    <h1 class="section-title">Breakfast</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">A complimentary continental breakfast served every morning for all guests.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/restaurant%203.png" alt="Breakfast in the garden"></div>
+    <div class="stack">
+      <p class="eyebrow">Morning</p>
+      <h2 class="section-title">A gentle start<br>to the day</h2>
+      <p>Every morning, our team prepares a full continental breakfast, served in the enchanting setting of our garden. Enjoy the morning freshness and the light of the lagoon before starting your day.</p>
+      <p style="color:var(--muted);font-size:14px">Served daily from <strong>6:00 AM to 11:00 AM</strong> · Complimentary for all guests</p>
+    </div>
+  </div>
+</section>
+<section class="section section--cream">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/piscine%202.png" alt="Morning atmosphere"></div>
+    <div class="stack">
+      <p class="eyebrow">Included services</p>
+      <h2 class="section-title">Everything you need<br>to start well</h2>
+      <p>Beyond breakfast, our team is available 24/7 to respond to every request — room service, local activity advice, transport arrangements. We attend to every detail of your stay.</p>
+      <ul class="feature-list" style="max-width:400px">
+        <li>Complimentary continental breakfast</li>
+        <li>Free Wi-Fi throughout the property</li>
+        <li>Free on-site parking</li>
+        <li>24-hour reception · Room service</li>
+        <li>French &amp; English-speaking staff</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="evenements" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/ambiance%202.png" alt="Events &amp; Receptions"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Celebrations</p>
+    <h1 class="section-title">Events &amp; Receptions</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">An exceptional setting for your most precious moments, up to 1,000 guests.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap split reveal">
+    <div class="split__media"><img src="images/jardin%202.png" alt="Garden for events"></div>
+    <div class="stack">
+      <p class="eyebrow">Weddings &amp; Celebrations</p>
+      <h2 class="section-title">Your dream<br>wedding</h2>
+      <p>Imagine your wedding in our lush garden, on the banks of the Ébrié lagoon. La Baie des Orchidées offers a romantic and intimate setting to celebrate this unique moment with those dearest to you. Candlelit dinner, floral décor, catering — every detail is arranged to your wishes.</p>
+      <div><a class="btn btn--solid" href="#contact" data-nav="contact">Plan your wedding</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section--lagune">
+  <div class="wrap split split--reverse reveal">
+    <div class="split__media"><img src="images/ambiance%204.png" alt="Corporate seminars"></div>
+    <div class="stack">
+      <p class="eyebrow" style="color:var(--gold)">Professionals</p>
+      <h2 class="section-title">Seminars<br>&amp; corporate events</h2>
+      <p style="color:rgba(245,241,232,.85)">Away from the city bustle, our grounds provide the ideal environment for focus and creativity. Residential seminars, board meetings, training sessions — our team accompanies every project with discretion and efficiency.</p>
+      <div><a class="btn btn--light" href="#contact" data-nav="contact">Plan your seminar</a></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><div class="num">1,000</div><div class="lbl">Guests capacity</div></div>
+      <div class="fact"><div class="num">8,000<span style="font-size:1.4rem"> m²</span></div><div class="lbl">Of grounds</div></div>
+      <div class="fact"><div class="num">★</div><div class="lbl">Bespoke catering</div></div>
+      <div class="fact"><div class="num">24<span style="font-size:1.4rem">h</span></div><div class="lbl">At your service</div></div>
+    </div>
+  </div>
+</section>
+<section class="section section--cream">
+  <div class="wrap center reveal" style="max-width:780px">
+    <p class="eyebrow">Event types</p>
+    <h2 class="section-title" style="margin:.2em 0 .5em">Every occasion deserves<br>a perfect setting</h2>
+    <p class="lead">Weddings, birthdays, christenings, corporate evenings, product launches, residential seminars — La Baie des Orchidées adapts to every project and brings its experience to your event.</p>
+    <div style="margin-top:34px"><a class="btn btn--solid" href="#contact" data-nav="contact">Contact us about your project</a></div>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="galerie" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/paysage%202.png" alt="Photo Gallery"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">In pictures</p>
+    <h1 class="section-title">Photo Gallery</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Rooms, pool, garden, restaurant and lagoon: the spirit of La Baie des Orchidées.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="mosaic reveal">
+      <figure class="wide"><img src="images/piscine.png" alt="Pool"></figure>
+      <figure><img src="images/chambre.png" alt="Room"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Garden"></figure>
+      <figure class="tall"><img src="images/restaurant.png" alt="Restaurant"></figure>
+      <figure><img src="images/bar.png" alt="Bar"></figure>
+      <figure><img src="images/ambiance.png" alt="Atmosphere"></figure>
+      <figure><img src="images/paysage%201.png" alt="Lagoon"></figure>
+      <figure><img src="images/chambre%202.png" alt="Room"></figure>
+      <figure class="wide"><img src="images/jardin%202.png" alt="Garden"></figure>
+      <figure><img src="images/piscine%202.png" alt="Pool"></figure>
+      <figure><img src="images/restaurant%202.png" alt="Restaurant"></figure>
+      <figure><img src="images/chambre%203.png" alt="Room"></figure>
+      <figure><img src="images/ambiance%202.png" alt="Atmosphere"></figure>
+      <figure><img src="images/paysage%202.png" alt="Landscape"></figure>
+      <figure><img src="images/salon.png" alt="Lounge"></figure>
+      <figure><img src="images/salle%20de%20bain.png" alt="Bathroom"></figure>
+      <figure><img src="images/chambre%204.png" alt="Room"></figure>
+      <figure><img src="images/restaurant%203.png" alt="Restaurant"></figure>
+      <figure><img src="images/jardin%203.png" alt="Garden"></figure>
+      <figure><img src="images/ambiance%204.png" alt="Atmosphere"></figure>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="contact" hidden>
+<section class="pagehero">
+  <div class="pagehero__bg"><img src="images/paysage%203.png" alt="Access &amp; Contact"></div>
+  <div class="pagehero__inner">
+    <p class="eyebrow" style="color:var(--gold)">Find us</p>
+    <h1 class="section-title">Access &amp; Contact</h1>
+    <p class="lead" style="color:var(--ivory);max-width:620px;margin:18px auto 0">Zone 4 Biétry, Marcory, Abidjan — 6 km from the international airport.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap grid-2" style="align-items:start">
+    <div class="stack reveal">
+      <p class="eyebrow">Reservations &amp; enquiries</p>
+      <h2 class="section-title">Write to us</h2>
+      <form id="contact-form-en">
+        <div class="field"><label>Full name</label><input type="text" required></div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field"><label>Phone</label><input type="tel"></div>
+        <div class="field"><label>Subject</label>
+          <select>
+            <option>Room reservation</option>
+            <option>Restaurant</option>
+            <option>Wedding / Reception</option>
+            <option>Seminar / Event</option>
+            <option>General enquiry</option>
+          </select>
+        </div>
+        <div class="field"><label>Preferred dates</label><input type="text" placeholder="e.g. July 15–17, 2026"></div>
+        <div class="field"><label>Message</label><textarea rows="4"></textarea></div>
+        <button class="btn btn--solid" type="submit">Send</button>
+        <p id="form-msg-en" style="display:none;margin-top:16px;color:var(--lagune)">Thank you, your message has been sent. We will get back to you shortly.</p>
+      </form>
+    </div>
+    <div class="stack reveal">
+      <div class="card" style="padding:30px;margin-bottom:30px">
+        <h3 style="font-size:1.7rem;margin-bottom:18px">La Baie des Orchidées</h3>
+        <p style="color:var(--ink-soft);line-height:2.1">
+          Boulevard de Marseille / Rue Paul Kagamé<br>
+          Zone 4 Biétry, Marcory<br>
+          Abidjan, Côte d'Ivoire<br><br>
+          <strong>Mobile</strong><br>
+          <a href="tel:+2250768920442" style="color:var(--orchid)">+225 07 68 92 04 42</a><br><br>
+          <strong>Landline</strong><br>
+          <a href="tel:+2252721594247" style="color:var(--orchid)">+225 27 21 59 42 47</a><br><br>
+          <strong>Facebook</strong><br>
+          <a href="https://facebook.com/labaiedesorchidees" style="color:var(--orchid)" target="_blank">facebook.com/labaiedesorchidees</a><br><br>
+          <strong>Check-in</strong> from 2:00 PM<br>
+          <strong>Check-out</strong> before 12:00 PM<br>
+          Minimum age: 18 years
+        </p>
+      </div>
+      <iframe class="map-embed" title="Map — La Baie des Orchidées, Biétry Abidjan" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-3.99307%2C5.2556%2C-3.95307%2C5.2856&amp;layer=mapnik&amp;marker=5.2706%2C-3.97307"></iframe>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="#hotel" data-nav="hotel">La Baie des Orchidées<small>Biétry · Abidjan · 3-star Hotel</small></a>
+        <p style="margin-top:18px;max-width:280px">A hidden gem on the shores of the Ébrié lagoon — charm, refinement and design in the heart of Abidjan.</p>
+        <div class="footer__social">
+          <a href="https://facebook.com/labaiedesorchidees" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="#hotel" data-nav="hotel">The Hotel</a></li>
+          <li><a href="#chambres" data-nav="chambres">Rooms &amp; Suites</a></li>
+          <li><a href="#restaurant" data-nav="restaurant">Restaurant &amp; Bar</a></li>
+          <li><a href="#petitdej" data-nav="petitdej">Breakfast</a></li>
+          <li><a href="#evenements" data-nav="evenements">Events &amp; Receptions</a></li>
+          <li><a href="#galerie" data-nav="galerie">Photo Gallery</a></li>
+          <li><a href="#contact" data-nav="contact">Access &amp; Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practical info</h4>
+        <ul>
+          <li><a href="#chambres" data-nav="chambres">Check-in 2PM / Check-out 12PM</a></li>
+          <li><a href="#chambres" data-nav="chambres">Free parking</a></li>
+          <li><a href="#petitdej" data-nav="petitdej">Breakfast included</a></li>
+          <li><a href="#evenements" data-nav="evenements">Events up to 1,000 guests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>Bd de Marseille / Rue Paul Kagamé<br>Zone 4 Biétry, Marcory<br>Abidjan, Côte d'Ivoire</p>
+        <p style="margin-top:12px"><a href="tel:+2250768920442">+225 07 68 92 04 42</a></p>
+        <p><a href="tel:+2252721594247">+225 27 21 59 42 47</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span class="year-en"></span> La Baie des Orchidées · Zone 4 Biétry, Marcory, Abidjan, Côte d'Ivoire</span>
+      <span>Direct booking · Breakfast included · Free parking</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /lang-en -->
+
+
+<script>
+(function(){
+  var lang = 'fr', currentPage = 'hotel';
+
+  function layer(){ return document.getElementById('lang-' + lang); }
+
+  function getOverlay(){
+    return document.getElementById('overlay-' + lang);
+  }
+
+  function closeMenu(){
+    var o = getOverlay();
+    if(o) o.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openMenu(){
+    var o = getOverlay();
+    if(o) o.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function show(id){
+    currentPage = id || 'hotel';
+    var L = layer();
+    var pages = L.querySelectorAll('.page');
+    var found = false;
+    pages.forEach(function(p){
+      var on = p.getAttribute('data-page') === currentPage;
+      p.hidden = !on;
+      if(on){
+        found = true;
+        p.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('in'); });
+      }
+    });
+    if(!found){
+      pages.forEach(function(p, i){
+        p.hidden = i !== 0;
+        if(i === 0){
+          currentPage = 'hotel';
+          p.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('in'); });
+        }
+      });
+    }
+    closeMenu();
+    window.scrollTo(0, 0);
+  }
+
+  function setLang(l){
+    lang = l;
+    document.getElementById('lang-fr').hidden = (l !== 'fr');
+    document.getElementById('lang-en').hidden = (l !== 'en');
+    document.documentElement.lang = l;
+    show(currentPage);
+  }
+
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-open-menu]')){ e.preventDefault(); openMenu(); return; }
+    if(e.target.closest('[data-close-menu]')){ e.preventDefault(); closeMenu(); return; }
+    var lg = e.target.closest('a.lang');
+    if(lg){ e.preventDefault(); setLang(lang === 'fr' ? 'en' : 'fr'); return; }
+    var n = e.target.closest('[data-nav]');
+    if(n){ e.preventDefault(); var id = n.getAttribute('data-nav'); history.replaceState(null, '', '#' + id); show(id); return; }
+  });
+
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+
+  var yr = new Date().getFullYear();
+  document.querySelectorAll('.year-fr, .year-en').forEach(function(el){ el.textContent = yr; });
+
+  document.addEventListener('submit', function(e){
+    if(e.target.id === 'contact-form-fr'){
+      e.preventDefault();
+      var m = document.getElementById('form-msg-fr');
+      if(m) m.style.display = 'block';
+      e.target.reset();
+    }
+    if(e.target.id === 'contact-form-en'){
+      e.preventDefault();
+      var m = document.getElementById('form-msg-en');
+      if(m) m.style.display = 'block';
+      e.target.reset();
+    }
+  });
+
+  setLang('fr');
+  show(location.hash ? location.hash.slice(1) : 'hotel');
+})();
+</script>
+</body>
+</html>
